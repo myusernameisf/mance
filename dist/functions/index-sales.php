@@ -14,7 +14,12 @@
             data-bs-placement="bottom" title="Go to Receipt No.: <?= $data['sale_receiptno']; ?>">
                 <div class="recent-message d-flex px-4 py-3">
                     <div class="avatar avatar-lg">
-                        <img src="assets/images/faces/<?= $data['acc_logo']; ?>.jpg">
+                        <?php if (!empty($data['acc_logo'])) { ?>
+                            <img src="assets/images/faces/<?= $data['acc_logo']; ?>.jpg">
+                        <?php } else { ?>
+                            <img src="assets/images/faces/1.jpg">
+                        <?php } ?>
+                        
                     </div>
                     <div class="name ms-4">
                         <h5 class="mb-1">Receipt No.: <?= $data['sale_receiptno']; ?></h5>
@@ -22,6 +27,7 @@
                     </div>
                 </div>
             </a>
+            <hr>
         <?php } ?>
         
     <?php } else {

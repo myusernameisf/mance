@@ -4,8 +4,8 @@
 
     
     include_once ('connection-open.php');
-    $stmt = $connection->prepare("SELECT * FROM tblaccounts WHERE acc_email = ? AND acc_password = ?");
-    $stmt->execute([$email,$password]);
+    $stmt = $connection->prepare("SELECT * FROM tblaccounts WHERE acc_email = ? AND acc_password = ? AND acc_isTrash = ?");
+    $stmt->execute([$email,$password,0]);
     $count = $stmt->rowCount();
     $array = $stmt->fetch();
 

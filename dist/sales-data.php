@@ -98,7 +98,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         <label>User: </label>
-                                        <input type="text" name="" placeholder="User" value="<?= $userdetails['fname'].' '.$userdetails['lname']; ?>"
+                                        <input type="text" name="" placeholder="User" value="<?= $datas['acc_firstname'].' '.$datas['acc_lastname']; ?>"
                                         class="form-control" readonly readonly>
                                     </div>
                                     <div class="col-sm-6">
