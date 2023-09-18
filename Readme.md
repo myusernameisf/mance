@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ephraim Rommel Arceo</h1>
-<h3 align="center">A passionate Backend developer from Philippines</h3>
+<h3 align="center">Im Ephraim Rommel N. Arceo a graduate of Bachelor of Science in Information Technology at Cavite State University - Carmona Campus last September 2022. Currently working as a Freelancer. But im willing to become part of a company or organization that can use or enhance my skills both developer or support.</h3>
 
 - 👨‍💻 All of my projects are available at [http://ephwebsite.epizy.com/](http://ephwebsite.epizy.com/)
 
