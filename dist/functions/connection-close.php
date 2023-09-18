@@ -1,0 +1,3 @@
+<?php
+    $con = null;
+?>
