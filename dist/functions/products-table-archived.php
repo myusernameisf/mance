@@ -1,7 +1,7 @@
 <?php
 
     include_once ('connection-open.php');
-    $stmt = $connection->prepare("SELECT * FROM tblproducts WHERE prd_isTrash = ?");
+    $stmt = $connection->prepare("SELECT * FROM tblproducts WHERE prd_isTrash = ? ORDER BY prd_ID DESC");
     $stmt->execute([1]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();

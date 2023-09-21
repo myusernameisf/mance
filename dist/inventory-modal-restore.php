@@ -24,6 +24,7 @@
                         <i class="bx bx-x d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Close</span>
                     </a>
+                    <input type="hidden" name="inv-id" value="<?= $data['inv_ID']; ?>">
                     <button type="submit" name="restore-inventory-id" value="<?= $data['inv_productID']; ?>" class="btn btn-primary ml-1">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Accept</span>

@@ -4,7 +4,7 @@
     $stmt = $connection->prepare("SELECT tblpos.*,inv_brandname,inv_name,inv_prdCode 
     FROM tblpos 
     LEFT JOIN tblinventory ON tblpos.pos_invID = tblinventory.inv_ID
-    WHERE pos_userID = ?");
+    WHERE pos_userID = ? ORDER BY pos_ID DESC");
     $stmt->execute([$userdetails['id']]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();

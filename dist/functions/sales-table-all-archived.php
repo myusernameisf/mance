@@ -3,7 +3,7 @@
     $stmt = $connection->prepare("SELECT * 
     FROM tblsales 
     LEFT JOIN tblaccounts ON acc_ID = sale_userID
-    WHERE (sale_isTrash = ?) AND (sale_date BETWEEN '$firstDate' AND '$lastDate')");
+    WHERE (sale_isTrash = ?) AND (sale_date BETWEEN '$firstDate' AND '$lastDate') ORDER BY sale_ID DESC");
     $stmt->execute([1]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();

@@ -3,7 +3,7 @@
     $stmt = $connection->prepare("SELECT tblsalesitem.*,inv_brandname,inv_name 
     FROM tblsalesitem 
     LEFT JOIN tblinventory ON tblsalesitem.item_invID = tblinventory.inv_ID
-    WHERE item_receiptno = ?");
+    WHERE item_receiptno = ? ORDER BY sale_ID DESC");
     $stmt->execute([$receiptno]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();

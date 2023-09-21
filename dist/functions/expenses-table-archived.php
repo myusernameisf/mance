@@ -4,7 +4,7 @@
     $stmt = $connection->prepare("SELECT tblexpenses.*,tblproducts.prd_brandname,tblproducts.prd_name,tblproducts.prd_code  
     FROM tblexpenses 
     LEFT JOIN tblproducts ON tblproducts.prd_ID = tblexpenses.exp_productID 
-    WHERE (exp_isTrash = ?) AND (exp_date BETWEEN '$firstDate' AND '$lastDate')");
+    WHERE (exp_isTrash = ?) AND (exp_date BETWEEN '$firstDate' AND '$lastDate') ORDER BY exp_ID DESC");
     $stmt->execute([1]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();
