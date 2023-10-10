@@ -23,7 +23,7 @@
 
        
     } else {
-        echo '<script>window.location.assign("./auth-login.php?account-created-password");</script>';
+        echo '<script>window.location.assign("../auth-login.php?account-created-password");</script>';
     }
     
     

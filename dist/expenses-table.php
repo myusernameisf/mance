@@ -75,7 +75,7 @@
                                 </form>
                             
                             
-                                <?php if (isset($_GET['product-added-success'])) { ?>
+                                <?php if (isset($_GET['expense-added-success'])) { ?>
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         Expense created successfully.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

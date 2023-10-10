@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="functions/user-accounts-update.php" method="post">
+                <form action="functions/user-accounts-update-profile.php" method="post">
                     <div class="modal-body">
                         <label>Logo: </label>
                         <div class="form-group">

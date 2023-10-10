@@ -94,6 +94,10 @@
                                 </table>
 
                                 <?php include_once ('functions/sales-data.php'); ?>
+                                
+                                <?php if (empty($datas)) { ?>
+                                    <script>window.location.assign('error-404.php');</script>
+                                <?php } ?>
 
                                 <div class="form-group row">
                                     <div class="col-sm-6">

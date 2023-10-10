@@ -33,7 +33,7 @@
                         <label>Select Product: </label>
                         <div class="form-group">
                             <select name="product-id" class="choices form-select" required>
-                                <option>Select Product</option>
+                                <option value="">Select Product</option>
                                 <?php include('functions/select-products.php'); ?>
                             </select>
                         </div>
