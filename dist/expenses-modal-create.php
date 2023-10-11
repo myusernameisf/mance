@@ -64,12 +64,6 @@
                             <input type="number" step="any" name="unit-price" id="unitPrice" placeholder="Unit Price" onkeyup="add_number()"
                                 class="form-control" required>
                         </div>
-                        <hr>
-                        <label>Total: </label>
-                        <div class="form-group">
-                            <input type="text" name="total" value="0.00" id="total" placeholder="Total"
-                                class="form-control" readonly>
-                        </div>
                         
                     </div>
                     
@@ -89,17 +83,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    function add_number() {
-    var a_number = parseFloat(document.getElementById("qty").value.replace(/,/g,''));
-    if (isNaN(a_number)) a_number = 0;
-    var b_number = parseFloat(document.getElementById("unitPrice").value.replace(/,/g,''));
-    if (isNaN(b_number)) b_number = 0;
-    
-    
-    var resultUnitPrice = a_number * b_number;
-    var result2 = resultUnitPrice.toFixed(2);
-    document.getElementById("total").value = result2.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-</script>

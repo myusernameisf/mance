@@ -38,7 +38,7 @@
             $stmt->execute([$userid]);
     
             include_once ('connection-close.php');
-            echo '<script>window.location.assign("../sales-data.php?receiptno='.$receiptno.'");</script>';
+            echo '<script>window.location.assign("../sales-point2.php");</script>';
         } else {
             echo '<script>window.location.assign("../sales-point2.php?no-products");</script>';
         }

@@ -46,29 +46,36 @@
                         <div class="card">
                             <div class="card-header">
                                 Products
+
+                                <?php if (isset($_GET['product-added-success'])) { ?>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Product created successfully.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php } elseif (isset($_GET['update-success'])) { ?>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Product updated successfully.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php } elseif (isset($_GET['trash-success'])) { ?>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Product move to trash successfully.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php } elseif (isset($_GET['update-failed'])) { ?>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        Product failed to update.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php } elseif (isset($_GET['product-exists'])) { ?>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        Product already exists.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php } ?>
                                 
                             </div>
-                            <?php if (isset($_GET['product-added-success'])) { ?>
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    Product created successfully.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            <?php } elseif (isset($_GET['update-success'])) { ?>
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    Product updated successfully.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            <?php } elseif (isset($_GET['trash-success'])) { ?>
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    Product move to trash successfully.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            <?php } elseif (isset($_GET['update-failed'])) { ?>
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    Product failed to update.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            <?php } ?>
+                            
 
                             <div class="card-body">
                                 <table class="table table-striped" id="table1">
