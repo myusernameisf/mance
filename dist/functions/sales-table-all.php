@@ -11,7 +11,15 @@
     <?php $totalValue = 0; ?>
     <?php if ($count > 0) { ?>
         <?php foreach ($datas as $data) { ?>
-            <tr>
+            <?php if (isset($_GET['rn'])) { ?>
+                <?php if ($_GET['rn'] == $data['sale_receiptno']) { ?>
+                    <tr class="bg-warning text-light">
+                <?php } else { ?>
+                    <tr>
+                <?php } ?>
+            <?php } else { ?>
+                <tr>
+            <?php } ?>
                 <td><?= date('F d, Y', strtotime($data['sale_date'])); ?></td>
                 <td><?= $data['sale_receiptno']; ?></td>
                 <td><?= $data['sale_customer']; ?></td>

@@ -63,7 +63,7 @@
                             <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
                             data-bs-placement="right" title="Sales">
                                 <i class="bi bi-folder-fill"></i>
-                                <span>Transactions</span>
+                                <span>Transaction Records</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
@@ -92,7 +92,7 @@
                                 <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
                                 data-bs-placement="right" title="Returns">
                                     <i class="bi bi-trash-fill"></i>
-                                    <span>Returns</span>
+                                    <span>Return Records</span>
                                 </a>
                                 <ul class="submenu ">
                                     <li class="submenu-item ">

@@ -26,11 +26,11 @@
                         <div class="form-group row m-0">
                             <div class="col-sm-3">
                                 <label for=""><b>Qty: </b></label><input type="number" name="qty" id="qty" value="0" min="1" max="<?= $data['inv_qty']; ?>" placeholder="Qty" onkeyup="add_number()"
-                                    class="form-control" required>
+                                    class="form-control p-1" required>
                             </div>
                             <div class="col-sm-6">
                                 <label for=""><b>Price: </b></label><input type="number" step="any" id="selling-price" name="sprice" onkeyup="add_number()" placeholder="Selling Price" value="<?= $data['inv_sellingprice']; ?>"
-                                    class="form-control" required>
+                                    class="form-control p-1" required>
                             </div>
                             <div class="col-sm-1">
                                 <button type="submit" class="btn btn-primary mr-2 mt-4" title="Add Order"><i class="bi bi-cart-fill"></i></button>

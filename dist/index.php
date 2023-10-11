@@ -136,7 +136,7 @@
                                         </div>
                                         <div class="ms-3 name">
                                             <h5 class="font-bold"><?= $userdetails['fname']; ?></h5>
-                                            <h6 class="text-muted mb-0">@<?=$userdetails['email']; ?></h6>
+                                            <h6 class="text-muted mb-0">@<?=$userdetails['access']; ?></h6>
                                         </div>
                                     </div>
                                 </div>

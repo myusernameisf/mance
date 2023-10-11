@@ -10,7 +10,7 @@
 ?>
     <?php if ($count > 0) { ?>
         <?php foreach ($datas as $data) { ?>
-            <a href="sales-data.php?receiptno=<?= $data['sale_receiptno']; ?>" data-bs-toggle="tooltip"
+            <a href="sales-table.php?rn=<?= $data['sale_receiptno']; ?>" data-bs-toggle="tooltip"
             data-bs-placement="bottom" title="Go to Receipt No.: <?= $data['sale_receiptno']; ?>">
                 <div class="recent-message d-flex px-4 py-3">
                     <div class="avatar avatar-lg">
