@@ -75,10 +75,9 @@
                                     <thead>
                                         <tr>
                                             <th>Product Code</th>
-                                            <th>Brand</th>
-                                            <th>Name</th>
+                                            <th>Product Name</th>
                                             <th>Category</th>
-                                            <th>Date Added</th>
+                                            <th>UoM</th>
                                             <th></th>
                                         </tr>
                                     </thead>

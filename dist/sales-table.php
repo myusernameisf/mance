@@ -29,7 +29,6 @@
                         <div class="row">
                             <div class="col-12 col-md-6 order-md-1 order-last">
                                 <h3>Sales</h3>
-                                <a href="sales-point.php" class="btn btn-outline-primary mb-2">Add more</a>
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">

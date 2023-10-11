@@ -14,7 +14,7 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Are you sure you want to Trash <?= $data['prd_brandname']; ?> <?= $data['prd_name']; ?>?
+                    Are you sure you want to Trash <?= $data['prd_name']; ?>?
                 </p>
             </div>
             <div class="modal-footer">

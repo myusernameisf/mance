@@ -5,7 +5,7 @@
         role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="viewExpensesModal<?= $data['exp_ID']; ?>Title">View This Expense
+                <h5 class="modal-title" id="viewExpensesModal<?= $data['exp_ID']; ?>Title">View This Record
                 </h5>
                 <button type="button" class="close" data-bs-dismiss="modal"
                     aria-label="Close">
@@ -15,10 +15,20 @@
             <div class="modal-body">
                 <form action="functions/expenses-update.php" method="post">
                     <div class="modal-body">
-                    <label>Date: </label>
+                        <label>Date: </label>
                         <div class="form-group">
                             <input type="date" name="date" value="<?= $data['exp_date']; ?>" placeholder="Date"
                                 class="form-control" required>
+                        </div>
+                        <label>Product Code: </label>
+                        <div class="form-group">
+                            <input type="text" name="product-code" value="<?= $data['exp_productCode']; ?>" placeholder="Product Code"
+                                class="form-control" required readonly>
+                        </div>
+                        <label>Product Name: </label>
+                        <div class="form-group">
+                            <input type="text" name="product-name" value="<?= $data['exp_productName']; ?>" placeholder="Product Name"
+                                class="form-control" required readonly>
                         </div>
                         <label>Supplier: </label>
                         <div class="form-group">
@@ -29,13 +39,6 @@
                         <div class="form-group">
                             <input type="text" name="receipt-no" value="<?= $data['exp_receiptno']; ?>" placeholder="Receipt No."
                                 class="form-control" required>
-                        </div>
-                        <label>Select Product: </label>
-                        <div class="form-group">
-                            <select name="product-id" class="choices form-select" required>
-                                <option value="<?= $data['exp_productID']; ?>"><?= $data['prd_brandname'].' - '.$data['prd_name'].' - '.$data['prd_code']; ?></option>
-                                <?php include('functions/select-products.php'); ?>
-                            </select>
                         </div>
                         <label>Qty: </label>
                         <div class="form-group">

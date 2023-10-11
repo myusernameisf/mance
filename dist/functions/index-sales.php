@@ -30,9 +30,7 @@
             <hr>
         <?php } ?>
         
-    <?php } else {
-        echo 'There is no sales.'; 
-    } ?>
+    <?php } ?>
 
     <?php include_once ('connection-close.php'); ?>
 

@@ -153,7 +153,7 @@
 
                                 <?php include_once ('functions/index-sales.php'); ?>
                                 <div class="px-4">
-                                    <a class='btn btn-block btn-xl btn-outline-primary font-bold mt-3' href="sales-point.php">Point of Sales</a>
+                                    <a class='btn btn-block btn-xl btn-outline-primary font-bold mt-3' href="sales-point2.php">Point of Sales</a>
                                 </div>
                             </div>
                         </div>

@@ -18,13 +18,15 @@
                 <td><?= $data['sale_pm']; ?></td>
                 <td><?= $data['acc_firstname'].' '.$data['acc_lastname']; ?></td>
                 <td>
-                    <a class="btn btn-success mr-2" target="_blank" href="sales-data.php?receiptno=<?= $data['sale_receiptno']; ?>" data-bs-toggle="tooltip"
+                    <a class="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#viewSalesModal<?= $data['sale_ID']; ?>" data-bs-toggle="tooltip"
                             data-bs-placement="left" title="View"><i class="bi bi-eye-fill"></i></a>
                     <a class="btn btn-danger mr-2" data-bs-toggle="modal" data-bs-target="#trashSalesModal<?= $data['sale_ID']; ?>" data-bs-toggle="tooltip"
                             data-bs-placement="left" title="Trash"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
-            <?php include('sales-modal-trash.php'); ?>
+            <?php $receiptno = $data['sale_receiptno']; ?>
+            <?php include('./sales-modal-trash.php'); ?>
+            <?php include('./sales-modal-view.php'); ?>
         <?php } ?>
         
     <?php } ?>

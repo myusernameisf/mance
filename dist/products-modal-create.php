@@ -15,17 +15,12 @@
             <div class="modal-body">
                 <form action="functions/products-create.php" method="post">
                     <div class="modal-body">
-                        <label>Brand Name: </label>
-                        <div class="form-group">
-                            <input type="text" name="brand-name" placeholder="Brand Name"
-                                class="form-control" required>
-                        </div>
                         <label>Product Code: </label>
                         <div class="form-group">
                             <input type="text" name="product-code" placeholder="Product Code"
                                 class="form-control" required>
                         </div>
-                        <label>Name: </label>
+                        <label>Product Name: </label>
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Name"
                                 class="form-control" required>
@@ -34,6 +29,11 @@
                         <div class="form-group mb-3">
                             <textarea class="form-control" name="category" id="exampleFormControlCategory"
                                 rows="3"></textarea>
+                        </div>
+                        <label for="exampleFormControlUoM" class="form-label">UoM (Unit of Measurement): </label>
+                        <div class="form-group">
+                            <input type="text" name="uom" placeholder="UoM"
+                                class="form-control" required>
                         </div>
                     </div>
                     

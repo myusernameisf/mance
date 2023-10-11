@@ -15,24 +15,31 @@
             <div class="modal-body">
                 <form action="functions/inventory-update.php" method="post">
                     <div class="modal-body">
-                    <label>Product Code: </label>
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label>Product Code: </label>
+                                <input type="text" name="product-code" value="<?= $data['inv_prdCode']; ?>" placeholder="Product Code"
+                                class="form-control" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Product Name: </label>
+                                <input type="text" name="name" value="<?= $data['inv_name']; ?>" placeholder="Name"
+                                class="form-control" required>
+                            </div>
+                        </div>
+                        <label>UoM: </label>
                         <div class="form-group">
-                            <input type="text" name="product-code" value="<?= $data['inv_prdCode']; ?>" placeholder="Product Code"
+                            <input type="text" name="uom" value="<?= $data['inv_uom']; ?>" placeholder="UoM"
                                 class="form-control" required>
                         </div>
-                        <label>Brand Name: </label>
-                        <div class="form-group">
-                            <input type="text" name="brand-name" value="<?= $data['inv_brandname']; ?>" placeholder="Brand Name"
-                                class="form-control" required>
-                        </div>
-                        <label>Name: </label>
-                        <div class="form-group">
-                            <input type="text" name="name" value="<?= $data['inv_name']; ?>" placeholder="Name"
-                                class="form-control" required>
+                        <label for="exampleFormControlDescription" class="form-label">Description: </label>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" name="description" id="exampleFormControlDescription"
+                                rows="3"><?= $data['inv_description']; ?></textarea>
                         </div>
                         <label>Qty: </label>
                         <div class="form-group">
-                            <input type="text" name="qty" value="<?= $data['inv_qty']; ?>" placeholder="Qty"
+                            <input type="number" name="qty" value="<?= $data['inv_qty']; ?>" placeholder="Qty"
                                 class="form-control" required>
                         </div>
                         <label>Unit Price: </label>

@@ -13,29 +13,11 @@
     <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 </head>
-
-<script>
-    function my_fun(str) {
-        if (window.XMLHttpRequest) {
-            xmlhttp = new XMLHttpRequest();
-
-        } else {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange= function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById('getData').innerHTML = this.responseText;
-            }
-        }
-
-        xmlhttp.open("GET", "functions/select-inventory-auto.php?value="+str, true);
-        xmlhttp.send();
-    }
-</script>
 
 <body>
     <div id="app">
@@ -76,28 +58,14 @@
 
                 <section class="section">
                     <div class="card">
-                        <div class="card-header">
-                            <form action="functions/pos-create.php" method="post">
-                            <input type="hidden" name="userid" value="<?= $userdetails['id']; ?>">
-                                <div class="form-group row" id="getData">
-                                    <div class="col-sm-9">
-                                        <label class="mb-2">Select Item: </label>
-                                        <select name="" class="choices form-select" id="SelectA" onchange="my_fun(this.value);" required>
-                                            <option>Select Product</option>
-                                            <?php include_once ('functions/select-inventory.php'); ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </form>
-                            <hr>
+                        <div class="card-header">   
+                            Order Products
                         </div>
-
                             <div class="card-body">
                                 <table class="table table-striped" id="table1">
                                     <thead>
                                         <tr>
                                             <th>Product Code</th>
-                                            <th>Brand Name</th>
                                             <th>Name</th>
                                             <th>Qty</th>
                                             <th>Selling Price</th>
@@ -109,38 +77,40 @@
                                         <?php include_once ('functions/pos-table.php'); ?>
                                     </tbody>
                                 </table>
+                                
+                                <hr>
+
+                                
 
                                 <form action="functions/sales-create.php" method="post">
                                     <div class="form-group row">
                                         <div class="col-sm-6">
-                                            <label>User: </label>
-                                            <input type="text" name="" placeholder="User" value="<?= $userdetails['fname'].' '.$userdetails['lname']; ?>"
-                                            class="form-control" readonly>
+                                            <label>Receipt No.: </label>
+                                            <?php include_once ('functions/get-new-receipt-no.php'); ?>
+                                            <?php $receipno = $datas['sale_receiptno'] + 1; ?>
+                                            <input type="text" name="receipt-no" placeholder="Receipt No." value="<?= $receipno; ?>"
+                                            class="form-control" required readonly>
                                         </div>
                                         <div class="col-sm-6">
-                                            <label>Receipt No.: </label>
-                                            <input type="number" name="receipt-no" placeholder="Receipt No."
+                                            <label>Date: </label>
+                                            <input type="date" name="date" value="<?= date('Y-m-d'); ?>" placeholder="Date"
                                             class="form-control" required>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-6">
-                                            <label>Date: </label>
-                                            <input type="date" name="date" value="<?= date('Y-m-d'); ?>" placeholder="Date"
-                                            class="form-control" required>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label>Customer: </label>
+                                            <label>Customer (Optional): </label>
                                             <input type="text" name="customer" placeholder="Customer"
-                                            class="form-control" required>
+                                            class="form-control">
                                         </div>
                                     </div>
+                                    <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-6">
                                             <label>Payment Method: </label>
                                             <select name="payment-method" class="choices form-select" required>
-                                                <option>Select Method</option>
+                                                <option value="">Select Method</option>
                                                 <option value="Cash">Cash</option>
                                                 <option value="GCash">GCash</option>
                                                 <option value="Bank Transfer">Bank Transfer</option>
@@ -148,8 +118,8 @@
                                             </select>
                                         </div>
                                         <div class="col-sm-6">
-                                            <label>Paid: </label>
-                                            <input type="number" name="paid" placeholder="Paid" id="inputPaid" onkeyup="add_number()"
+                                            <label>Payment: </label>
+                                            <input type="number" name="paid" placeholder="Payment" id="inputPaid" onkeyup="add_number()"
                                             class="form-control" required>
                                         </div>
                                     </div>
@@ -190,12 +160,41 @@
     </div>
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
-    <script>
+    <!-- <script src="assets/vendors/simple-datatables/simple-datatables.js"></script> -->
+    <!-- <script>
         // Simple Datatable
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#table1').DataTable( {
+                dom: 'Bfrtip',
+                "bPaginate": false,
+                buttons: [
+                    {
+                        extend: 'print',
+                        customize: function ( win ) {
+                            $(win.document.body)
+                                .css( 'font-size', '10pt' )
+                                .prepend(
+                                    '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                                );
+        
+                            $(win.document.body).find( 'table' )
+                                .addClass( 'compact' )
+                                .css( 'font-size', 'inherit' );
+                        }
+                    }
+                ]
+            } );
+        } );
     </script>
+    
 
     <script src="assets/js/main.js"></script>
     <script>

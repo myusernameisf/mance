@@ -29,6 +29,7 @@
                     </div>
                 </td>
                 
+                
                 <?php include ('./inventory-modal-restore.php'); ?>
             </tr>
         <?php } ?>

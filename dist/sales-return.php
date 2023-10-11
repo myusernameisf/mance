@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory - Mance Bicycle Shop</title>
+    <title>Sales Return - Mance Bicycle Shop</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -28,13 +28,13 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-6 order-md-1 order-last">
-                                <h3>Inventory</h3>
+                                <h3>Sales Return</h3>
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Inventory
+                                        <li class="breadcrumb-item active" aria-current="page">Sales Return
                                         </li>
                                     </ol>
                                 </nav>
@@ -44,44 +44,31 @@
                     <section class="section">
                         <div class="card">
                             <div class="card-header">
-                                <p class="mb-2">Inventory</p>
-
-                                <?php if (isset($_GET['update-success'])) { ?>
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Inventory Updated.
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                <?php } elseif (isset($_GET['trash-success'])) { ?>
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Inventory Deleted.
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                <?php } elseif (isset($_GET['update-failed'])) { ?>
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        Failed to update Inventory.
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                <?php } ?>
+                                Sales Return
+                                
                             </div>
-                            
+                            <?php if (isset($_GET['trash-success'])) { ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    Record remove successfully.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            <?php } ?>
 
                             <div class="card-body">
                                 <table class="table table-striped" id="table1">
                                     <thead>
                                         <tr>
+                                            <th>Date</th>
+                                            <th>Receipt No</th>
                                             <th>Product Code</th>
                                             <th>Product Name</th>
-                                            <th>Category</th>
-                                            <th>UoM</th>
-                                            <th>Description</th>
                                             <th>Qty</th>
-                                            <?php if ($userdetails['access'] == "ADMIN") { ?>
-                                                <th></th>
-                                            <?php } ?>
+                                            <th>Remarks</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php include_once ('functions/inventory-table.php'); ?>
+                                        <?php include_once ('functions/return-customer-table.php'); ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -91,6 +78,7 @@
                 </div>
 
                 <?php include_once ('footer.php'); ?>
+                <?php include_once ('products-modal-create.php'); ?>
             </div>
         </div>
     </div>

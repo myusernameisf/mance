@@ -20,12 +20,7 @@
                             <input type="text" name="product-code" value="<?= $data['prd_code']; ?>" placeholder="Product Code"
                                 class="form-control" required>
                         </div>
-                        <label>Brand Name: </label>
-                        <div class="form-group">
-                            <input type="text" name="brand-name" value="<?= $data['prd_brandname']; ?>" placeholder="Brand Name"
-                                class="form-control" required>
-                        </div>
-                        <label>Name: </label>
+                        <label>Product Name: </label>
                         <div class="form-group">
                             <input type="text" name="name" value="<?= $data['prd_name']; ?>" placeholder="Name"
                                 class="form-control" required>
@@ -34,6 +29,11 @@
                         <div class="form-group mb-3">
                             <textarea class="form-control" name="category" id="exampleFormControlCategory"
                                 rows="3"><?= $data['prd_category']; ?></textarea>
+                        </div>
+                        <label>UoM: </label>
+                        <div class="form-group">
+                            <input type="text" name="uom" value="<?= $data['prd_uom']; ?>" placeholder="UoM"
+                                class="form-control" required>
                         </div>
                     </div>
                     

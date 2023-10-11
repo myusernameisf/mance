@@ -56,7 +56,7 @@
                     <?php } ?>
 
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Official Inventory System of Mance Bicycle Shop.</p>
+                    <p class="auth-subtitle mb-5">Web-Based Sales Report And Inventory System For Mance Bicycle Shop Of Binan City, Laguna</p>
 
                     <form action="functions/auth-account-login.php" method="post">
                         <div class="form-group position-relative has-icon-left mb-4">

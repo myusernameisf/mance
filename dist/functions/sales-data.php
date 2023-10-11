@@ -4,9 +4,10 @@
     FROM tblsales
     LEFT JOIN tblaccounts ON acc_ID = sale_userID 
     WHERE sale_receiptno = ?");
-    $stmt->execute([$receiptno]);
+    
+    $stmt->execute([$data['sale_receiptno']]);
     $count = $stmt->rowCount();
-    $datas = $stmt->fetch();
+    $sales = $stmt->fetch();
 ?>
     <?php include_once ('connection-close.php'); ?>
 

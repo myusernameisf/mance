@@ -36,41 +36,6 @@
                         <li class="sidebar-title">Features</li>
 
                         <li class="sidebar-item  ">
-                            <a href="inventory-table.php" class='sidebar-link' data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="Inventory">
-                                <i class="bi bi-list-task"></i>
-                                <span>Inventory</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="Sales">
-                                <i class="bi bi-calculator-fill"></i>
-                                <span>Sales</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="sales-point.php" data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="POS">Point of Sales</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="sales-table.php" data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="Sales Transactions">Sales Transactions</a>
-                                </li>
-                                
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-item  ">
-                            <a href="expenses-table.php" class='sidebar-link' data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="Purchase Transactions">
-                                <i class="bi bi-folder-fill"></i>
-                                <span>Purchase Transactions</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item  ">
                             <a href="products-table.php" class='sidebar-link' data-bs-toggle="tooltip"
                             data-bs-placement="right" title="Products">
                                 <i class="bi bi-archive-fill"></i>
@@ -78,17 +43,70 @@
                             </a>
                         </li>
 
-                        <?php if ($userdetails['access'] == 'ADMIN') { ?>
                         <li class="sidebar-item  ">
-                            <a href="accounts-user.php" class='sidebar-link' data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="User Accounts">
-                                <i class="bi bi-person-circle"></i>
-                                <span>User Accounts</span>
+                            <a href="inventory-table.php" class='sidebar-link' data-bs-toggle="tooltip"
+                            data-bs-placement="right" title="Inventory">
+                                <i class="bi bi-list-task"></i>
+                                <span>Inventory</span>
                             </a>
                         </li>
 
-                        
+                        <li class="sidebar-item  ">
+                            <a href="sales-point2.php" class='sidebar-link' data-bs-toggle="tooltip"
+                            data-bs-placement="right" title="POS">
+                                <i class="bi bi-calculator-fill"></i>
+                                <span>Point of Sales</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
+                            data-bs-placement="right" title="Sales">
+                                <i class="bi bi-folder-fill"></i>
+                                <span>Transactions</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                        <a href="expenses-table.php" data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="Supplier Transactions">Supplier Transactions</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="sales-table.php" data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="Sales Transactions">Sales Transactions</a>
+                                </li>
+                                
+                            </ul>
+                        </li>   
+
+                        <?php if ($userdetails['access'] == 'ADMIN') { ?>
+
+                            <li class="sidebar-item  ">
+                                <a href="accounts-user.php" class='sidebar-link' data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="User Accounts">
+                                    <i class="bi bi-person-circle"></i>
+                                    <span>User Accounts</span>
+                                </a>
+                            </li>
+
                             <li class="sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="Returns">
+                                    <i class="bi bi-trash-fill"></i>
+                                    <span>Returns</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item ">
+                                        <a href="sales-return.php" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="Sales Return">Sales Return</a>
+                                    </li>
+                                    <li class="submenu-item ">
+                                        <a href="inventory-return.php" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="Supplier Returns">Supplier Returns</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <!-- <li class="sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
                                 data-bs-placement="right" title="Archives">
                                     <i class="bi bi-trash-fill"></i>
@@ -110,14 +128,14 @@
                                     <li class="submenu-item ">
                                         <a href="products-table-archived.php" data-bs-toggle="tooltip"
                                         data-bs-placement="right" title="Products">Products</a>
-                                    </li>
+                                    </li>   
                                     <li class="submenu-item ">
                                         <a href="accounts-user-archived.php" data-bs-toggle="tooltip"
                                         data-bs-placement="right" title="User Accounts">User Accounts</a>
                                     </li>
                                 </ul>
-                            </li>
-                        <?php } ?>
+                            </li> -->
+                            <?php } ?>
                         <hr>
                         <li class="sidebar-title">Other</li>
 

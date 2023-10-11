@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Transactions - Mance Bicycle Shop</title>
+    <title>Supplier Transactions - Mance Bicycle Shop</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -28,14 +28,13 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-6 order-md-1 order-last">
-                                <h3>Purchase Transactions</h3>
-                                <a href="#" class="btn btn-outline-primary mb-2" data-bs-toggle="modal" data-bs-target="#expensesModal">Add more</a>
+                                <h3>Supplier Transactions</h3>
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Purchase Transactions
+                                        <li class="breadcrumb-item active" aria-current="page">Supplier Transactions
                                         </li>
                                     </ol>
                                 </nav>
@@ -77,7 +76,7 @@
                             
                                 <?php if (isset($_GET['expense-added-success'])) { ?>
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Expense created successfully.
+                                        Expense created successfully. Item added to inventory.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php } elseif (isset($_GET['update-success'])) { ?>
@@ -102,12 +101,13 @@
                                             <th>Supplier</th>
                                             <th>Receipt No.</th>
                                             <th>Product Code</th>
-                                            <th>Brand Name</th>
-                                            <th>Name</th>
+                                            <th>Product Name</th>
                                             <th>Qty</th>
                                             <th>Unit Price</th>
                                             <th>Total</th>
-                                            <th></th>
+                                            <?php if ($userdetails['access'] == "ADMIN") { ?>
+                                                <th></th>
+                                            <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>

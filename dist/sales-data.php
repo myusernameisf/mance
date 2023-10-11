@@ -81,7 +81,6 @@
                                 <table class="table table-striped" id="table1">
                                     <thead>
                                         <tr>
-                                            <th>Brand Name</th>
                                             <th>Name</th>
                                             <th>Qty</th>
                                             <th>Selling Price</th>
@@ -103,7 +102,7 @@
                                     <div class="col-sm-6">
                                         <label>User: </label>
                                         <input type="text" name="" placeholder="User" value="<?= $datas['acc_firstname'].' '.$datas['acc_lastname']; ?>"
-                                        class="form-control" readonly readonly>
+                                        class="form-control" readonly>
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Receipt No.: </label>
