@@ -15,21 +15,15 @@
             <div class="modal-body">
                 <form action="functions/inventory-update.php" method="post">
                     <div class="modal-body">
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Product Code: </label>
-                                <input type="text" name="product-code" value="<?= $data['inv_prdCode']; ?>" placeholder="Product Code"
-                                class="form-control" required>
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Product Name: </label>
-                                <input type="text" name="name" value="<?= $data['inv_name']; ?>" placeholder="Name"
-                                class="form-control" required>
-                            </div>
-                        </div>
-                        <label>UoM: </label>
+                        
+                        <label>Product Code: </label>
                         <div class="form-group">
-                            <input type="text" name="uom" value="<?= $data['inv_uom']; ?>" placeholder="UoM"
+                            <input type="text" name="product-code" value="<?= $data['inv_prdCode']; ?>" placeholder="Product Code"
+                                class="form-control" required>
+                        </div>
+                        <label>Product Name: </label>
+                        <div class="form-group">
+                            <input type="text" name="name" value="<?= $data['inv_name']; ?>" placeholder="Name"
                                 class="form-control" required>
                         </div>
                         <label for="exampleFormControlDescription" class="form-label">Description: </label>
@@ -37,10 +31,17 @@
                             <textarea class="form-control" name="description" id="exampleFormControlDescription"
                                 rows="3"><?= $data['inv_description']; ?></textarea>
                         </div>
-                        <label>Qty: </label>
-                        <div class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                            <label>Qty: </label>
                             <input type="number" name="qty" value="<?= $data['inv_qty']; ?>" placeholder="Qty"
+                                class="form-control <?php if ($data['inv_lowstocknotif'] >= $data['inv_qty']) { echo 'border border-danger'; }; ?>" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>UoM: </label>
+                                <input type="text" name="uom" value="<?= $data['inv_uom']; ?>" placeholder="UoM"
                                 class="form-control" required>
+                            </div>
                         </div>
                         <label>Unit Price: </label>
                         <div class="form-group">

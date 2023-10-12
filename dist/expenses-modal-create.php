@@ -15,19 +15,16 @@
             <div class="modal-body">
                 <form action="functions/expenses-create.php" method="post">
                     <div class="modal-body">
-                        <div class="form-group row">
-                            <div class="col-sm-6">
-                                <label>Product Code: </label>
-                                <input type="text" name="product-code" placeholder="Product Code" value="<?= $data['prd_code']; ?>"
+                        <label>Product Code: </label>
+                        <div class="form-group">
+                            <input type="text" name="product-code" placeholder="Product Code" value="<?= $data['prd_code']; ?>"
                                 class="form-control" required readonly>
-                            </div>
-                            <div class="col-sm-6">
-                                <label>Product Name: </label>
-                                <input type="text" name="product-name" placeholder="Product Name" value="<?= $data['prd_name']; ?>"
-                                class="form-control" required readonly>
-                            </div>
                         </div>
-                        
+                        <label>Product Name: </label>
+                        <div class="form-group">
+                            <input type="text" name="product-name" placeholder="Product Name" value="<?= $data['prd_name']; ?>"
+                            class="form-control" required readonly>
+                        </div>
                         <label>Category: </label>
                         <div class="form-group">
                             <input type="text" name="category" placeholder="Category" value="<?= $data['prd_category']; ?>"
@@ -54,15 +51,17 @@
                             <input type="text" name="receipt-no" placeholder="Receipt No."
                                 class="form-control" required>
                         </div>
-                        <label>Qty: </label>
-                        <div class="form-group">
-                            <input type="number" name="qty" placeholder="Qty" id="qty" onkeyup="add_number()"
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label>Qty: </label>
+                                <input type="number" name="qty" placeholder="Qty" id="qty" onkeyup="add_number()"
+                                    class="form-control" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Unit Price: </label>
+                                <input type="number" step="any" name="unit-price" id="unitPrice" placeholder="Unit Price" onkeyup="add_number()"
                                 class="form-control" required>
-                        </div>
-                        <label>Unit Price: </label>
-                        <div class="form-group">
-                            <input type="number" step="any" name="unit-price" id="unitPrice" placeholder="Unit Price" onkeyup="add_number()"
-                                class="form-control" required>
+                            </div>
                         </div>
                         
                     </div>
