@@ -18,16 +18,16 @@
     
             $datas = $stmt->fetchAll();
             foreach ($datas as $data) {
-                $stmt = $connection->prepare("SELECT inv_qty, inv_name, inv_prdCode FROM tblinventory WHERE inv_ID = ?");
+                $stmt = $connection->prepare("SELECT prd_qty, prd_name, prd_code FROM tblproducts WHERE prd_ID = ?");
                 $stmt->execute([$data['pos_invID']]);
                 $qtys = $stmt->fetch();
-                $newQty = $qtys['inv_qty'] - $data['pos_qty'];
-                $stmt = $connection->prepare("UPDATE tblinventory SET inv_qty = ? WHERE inv_ID = ?");
+                $newQty = $qtys['prd_qty'] - $data['pos_qty'];
+                $stmt = $connection->prepare("UPDATE tblproducts SET prd_qty = ? WHERE prd_ID = ?");
                 $stmt->execute([$newQty,$data['pos_invID']]);
     
                 $stmt = $connection->prepare("INSERT INTO tblsalesitem 
                 (item_receiptno,item_prdName,item_prdCode,item_qty,item_sellingPrice,item_unitprice,item_date) VALUES (?,?,?,?,?,?,?)");
-                $stmt->execute([$receiptno,$qtys['inv_name'],$qtys['inv_prdCode'],$data['pos_qty'],$data['pos_sellingPrice'],$data['pos_unitprice'],$date]);
+                $stmt->execute([$receiptno,$qtys['prd_name'],$qtys['prd_code'],$data['pos_qty'],$data['pos_sellingPrice'],$data['pos_unitprice'],$date]);
             }
             
             $stmt = $connection->prepare("INSERT INTO tblsales 
@@ -38,7 +38,7 @@
             $stmt->execute([$userid]);
     
             include_once ('connection-close.php');
-            echo '<script>window.location.assign("../sales-point2.php");</script>';
+            echo '<script>window.location.assign("../sales-point2.php?sales-success");</script>';
         } else {
             echo '<script>window.location.assign("../sales-point2.php?no-products");</script>';
         }

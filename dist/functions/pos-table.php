@@ -1,9 +1,9 @@
 <?php
 
     include_once ('connection-open.php');
-    $stmt = $connection->prepare("SELECT tblpos.*,inv_name,inv_prdCode 
+    $stmt = $connection->prepare("SELECT tblpos.*,prd_name,prd_code 
     FROM tblpos 
-    LEFT JOIN tblinventory ON tblpos.pos_invID = tblinventory.inv_ID
+    LEFT JOIN tblproducts ON tblpos.pos_invID = tblproducts.prd_ID
     WHERE pos_userID = ? ORDER BY pos_ID DESC");
     $stmt->execute([$userdetails['id']]);
     $count = $stmt->rowCount();
@@ -14,8 +14,8 @@
         
         <?php foreach ($datas as $data) { ?>
             <tr>
-                <td><?= $data['inv_prdCode']; ?></td>
-                <td><?= $data['inv_name']; ?></td>
+                <td><?= $data['prd_code']; ?></td>
+                <td><?= $data['prd_name']; ?></td>
                 <td><?= $data['pos_qty']; ?></td>
                 <td><?= number_format($data['pos_sellingPrice'],2); ?></td>
                 <?php $totalSellingPrice = $data['pos_qty'] * $data['pos_sellingPrice']; ?>

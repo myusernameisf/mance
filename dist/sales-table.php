@@ -90,6 +90,8 @@
                                             <th>Customer</th>
                                             <th>Payment Method</th>
                                             <th>User</th>
+                                            <th>Amount</th>
+                                            <th>Profit</th>
                                             <th></th>
                                         </tr>
                                     </thead>

@@ -15,6 +15,8 @@
             <div class="modal-body">
                 <form action="functions/expenses-create.php" method="post">
                     <div class="modal-body">
+                        <input type="hidden" name="rqty" value="<?= $data['prd_qty']; ?>">
+                        <input type="hidden" name="id" value="<?= $data['prd_ID']; ?>">
                         <label>Product Code: </label>
                         <div class="form-group">
                             <input type="text" name="product-code" placeholder="Product Code" value="<?= $data['prd_code']; ?>"
@@ -54,12 +56,12 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label>Qty: </label>
-                                <input type="number" name="qty" placeholder="Qty" id="qty" onkeyup="add_number()"
+                                <input type="number" name="qty" placeholder="Qty" id="qty" value="1" min="1"
                                     class="form-control" required>
                             </div>
                             <div class="col-sm-6">
                                 <label>Unit Price: </label>
-                                <input type="number" step="any" name="unit-price" id="unitPrice" placeholder="Unit Price" onkeyup="add_number()"
+                                <input type="number" step="any" name="unit-price" id="unitPrice" placeholder="Unit Price" value="0.00"
                                 class="form-control" required>
                             </div>
                         </div>

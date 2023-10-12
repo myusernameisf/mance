@@ -63,7 +63,9 @@
                                             <th>Product Name</th>
                                             <th>Qty</th>
                                             <th>Remarks</th>
-                                            <th></th>
+                                            <?php if($userdetails['access'] == "ADMIN") { ?>
+                                                <th></th>
+                                            <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -8,6 +8,7 @@
     $datas = $stmt->fetchAll();
 ?>
     <?php $totalValue = 0; ?>
+    <?php $totalValueProfit = 0; ?>
     <?php if ($count > 0) { ?>
         <?php foreach ($datas as $data) { ?>
             <div class="row"> 
@@ -16,10 +17,13 @@
                 <div class="col-2 border p-2"><b><?= $data['item_qty']; ?>(<?= $data['item_returnQty']; ?>)</b></div> 
                 <div class="col-2 border p-2"><?= number_format($data['item_sellingPrice'],2); ?></div> 
                 <?php $totalSellingPrice = $data['item_qty'] * $data['item_sellingPrice']; ?>
+                <?php $totalUnitPrice = $data['item_qty'] * $data['item_unitprice']; ?>
                 <div class="col-2 border p-2"><b><?= number_format($totalSellingPrice,2); ?></b></div> 
                 <div class="col-2 border p-2 text-center"><a class="btn btn-warning mr-2" data-bs-toggle="modal" data-bs-target="#exampleModalToggle<?= $data['item_ID']; ?>" data-bs-toggle="tooltip"
                             data-bs-placement="left" title="Restart Password"><i class="bi bi-arrow-clockwise"></i></a></div> 
                 <?php $totalValue += $totalSellingPrice; ?>
+                <?php $profit = $totalSellingPrice - $totalUnitPrice; ?>
+                <?php $totalValueProfit += $profit; ?>
             </div>
             <div class="modal fade" id="exampleModalToggle<?= $data['item_ID']; ?>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel<?= $data['item_ID']; ?>" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">

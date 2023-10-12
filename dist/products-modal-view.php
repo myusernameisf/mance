@@ -15,7 +15,7 @@
             <div class="modal-body">
                 <form action="functions/products-update.php" method="post">
                     <div class="modal-body">
-                        <label>Product Code: </label>
+                    <label>Product Code: </label>
                         <div class="form-group">
                             <input type="text" name="product-code" value="<?= $data['prd_code']; ?>" placeholder="Product Code"
                                 class="form-control" required>
@@ -25,14 +25,41 @@
                             <input type="text" name="name" value="<?= $data['prd_name']; ?>" placeholder="Name"
                                 class="form-control" required>
                         </div>
-                        <label for="exampleFormControlCategory" class="form-label">Category: </label>
-                        <div class="form-group mb-3">
-                            <textarea class="form-control" name="category" id="exampleFormControlCategory"
-                                rows="3"><?= $data['prd_category']; ?></textarea>
-                        </div>
-                        <label>UoM: </label>
+                        <label>Category: </label>
                         <div class="form-group">
-                            <input type="text" name="uom" value="<?= $data['prd_uom']; ?>" placeholder="UoM"
+                            <input type="text" name="category" value="<?= $data['prd_category']; ?>" placeholder="Category"
+                                class="form-control" required>
+                        </div>
+                        <label for="exampleFormControlDescription" class="form-label">Description: </label>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" name="desc" id="exampleFormControlDescription"
+                                rows="3"><?= $data['prd_desc']; ?></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                            <label>Stock/s: </label>
+                            <input type="number" name="qty" value="<?= $data['prd_qty']; ?>" placeholder="Qty"
+                                class="form-control <?php if ($data['prd_lowstock'] >= $data['prd_qty']) { echo 'border border-danger'; }; ?>" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>UoM: </label>
+                                <input type="text" name="uom" value="<?= $data['prd_uom']; ?>" placeholder="UoM"
+                                class="form-control" required>
+                            </div>
+                        </div>
+                        <label>Unit Price: </label>
+                        <div class="form-group">
+                            <input type="number" name="unit-price" placeholder="Unit Price" value="<?= $data['prd_unitprice']; ?>"
+                                class="form-control" required>
+                        </div>
+                        <label>Selling Price: </label>
+                        <div class="form-group">
+                            <input type="number" step="any" name="selling-price" placeholder="Selling Price" value="<?= $data['prd_sellingprice']; ?>"
+                                class="form-control" required>
+                        </div>
+                        <label>Low Stock Qty: </label>
+                        <div class="form-group">
+                            <input type="number" step="any" name="low-stock" placeholder="Low Stock Qty" value="<?= $data['prd_lowstock']; ?>"
                                 class="form-control" required>
                         </div>
                     </div>

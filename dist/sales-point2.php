@@ -61,7 +61,8 @@
                     <div class="col-sm-7">
                         <div class="card">
                         <div class="card-body">
-                            Select Product
+                            <p>Select Product</p>
+                            <i>Input Qty and Price in one Product and click <i class="bi bi-cart-fill"></i></i>
                             <?php if (isset($_GET['duplicate'])) { ?>
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     Product failed to add. Please remove existing item in the Orders first.
@@ -88,6 +89,12 @@
                         <div class="card">
                         <div class="card-body">
                         <p class="mb-2">Orders</p>
+                        <?php if (isset($_GET['sales-success'])) { ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                Sales Added Successfully.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php } ?>
                         <table class="table table-striped" id="table2">
                             <thead>
                                 <tr>

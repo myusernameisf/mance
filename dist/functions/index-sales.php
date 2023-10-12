@@ -3,7 +3,7 @@
     $stmt = $connection->prepare("SELECT * 
     FROM tblsales 
     LEFT JOIN tblaccounts ON acc_ID = sale_userID
-    WHERE sale_isTrash = ? ORDER BY sale_ID DESC LIMIT 3");
+    WHERE sale_isTrash = ? ORDER BY sale_ID DESC LIMIT 2");
     $stmt->execute([0]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();

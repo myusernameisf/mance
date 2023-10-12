@@ -35,17 +35,17 @@
 
                         <li class="sidebar-title">Features</li>
 
+                        <!-- <li class="sidebar-item  ">
+                            <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
+                            data-bs-placement="right" title="Products">
+                                <i class="bi bi-files"></i>
+                                <span>Category</span>
+                            </a>
+                        </li> -->
+
                         <li class="sidebar-item  ">
                             <a href="products-table.php" class='sidebar-link' data-bs-toggle="tooltip"
                             data-bs-placement="right" title="Products">
-                                <i class="bi bi-archive-fill"></i>
-                                <span>Products</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item  ">
-                            <a href="inventory-table.php" class='sidebar-link' data-bs-toggle="tooltip"
-                            data-bs-placement="right" title="Inventory">
                                 <i class="bi bi-list-task"></i>
                                 <span>Inventory</span>
                             </a>
@@ -87,6 +87,7 @@
                                     <span>User Accounts</span>
                                 </a>
                             </li>
+                        <?php } ?>
 
                             <li class="sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link' data-bs-toggle="tooltip"
@@ -135,7 +136,7 @@
                                     </li>
                                 </ul>
                             </li> -->
-                            <?php } ?>
+                            
                         <hr>
                         <li class="sidebar-title">Other</li>
 

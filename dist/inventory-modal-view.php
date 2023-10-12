@@ -15,7 +15,6 @@
             <div class="modal-body">
                 <form action="functions/inventory-update.php" method="post">
                     <div class="modal-body">
-                        
                         <label>Product Code: </label>
                         <div class="form-group">
                             <input type="text" name="product-code" value="<?= $data['inv_prdCode']; ?>" placeholder="Product Code"

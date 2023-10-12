@@ -1,6 +1,6 @@
 <?php include_once('functions/index-bar-chart.php'); ?>
 <?php include_once('functions/index-pie-chart.php'); ?>
-
+<?php include_once('functions/index-top-items.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,12 +68,12 @@
                                         <h4>Sales this Year: <?= date('Y'); ?></h4>
                                     </div>
                                     <div class="card-body">
-                                        <div id="chart-profile-visit"></div>
+                                        <div id="chart-europe"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             
                             <div class="col-12 col-xl-12">
                                 <div class="card">
@@ -123,11 +123,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-12 col-lg-3">
                         <a href="" data-bs-toggle="modal" data-bs-target="#viewUser<?= $userdetails['id']; ?>" data-bs-toggle="tooltip"
-            data-bs-placement="bottom" title="View Profile">
+                            data-bs-placement="bottom" title="View Profile">
                             <div class="card">
                                 <div class="card-body py-4 px-5">
                                     <div class="d-flex align-items-center">
@@ -157,15 +157,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Last Month/This month</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="chart-visitors-profile"></div>
-                            </div>
-                        </div>
-                    </div>
+                        
                 </section>
             </div>
             <?php include_once ('footer.php'); ?>
@@ -173,10 +165,62 @@
     </div>
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
     <script src="assets/vendors/apexcharts/apexcharts.js"></script>
     
     <script>
+        var optionsEurope = {
+            series: [{
+                name: 'Gross',
+                data: [<?= $grossValues[0]; ?>,<?= $grossValues[1]; ?>,<?= $grossValues[2]; ?>,<?= $grossValues[3]; ?>,<?= $grossValues[4]; ?>,<?= $grossValues[5]; ?>,<?= $grossValues[6]; ?>,<?= $grossValues[7]; ?>,<?= $grossValues[8]; ?>,<?= $grossValues[9]; ?>,<?= $grossValues[10]; ?>,<?= $grossValues[11]; ?>],
+                colors: ['#5350e9']
+            },
+            {
+                name: 'Net',
+                data: [<?= $netValues[0]; ?>,<?= $netValues[1]; ?>,<?= $netValues[2]; ?>,<?= $netValues[3]; ?>,<?= $netValues[4]; ?>,<?= $netValues[5]; ?>,<?= $netValues[6]; ?>,<?= $netValues[7]; ?>,<?= $netValues[8]; ?>,<?= $netValues[9]; ?>,<?= $netValues[10]; ?>,<?= $netValues[11]; ?>],
+                colors: ['#3350e9'],
+            }],
+            chart: {
+                height: 300,
+                type: 'area',
+                toolbar: {
+                    show: true,
+                },
+            },
+            
+            stroke: {
+                width: 2,
+            },
+            grid: {
+                show:false,
+            },
+            dataLabels: {
+                enabled: false
+            },
+            xaxis: {
+                type: 'Sales',
+                categories: ["January","February","March","April","May","June","July", "August","September","October","November","December"],
+                axisBorder: {
+                    show:false
+                },
+                axisTicks: {
+                    show:false
+                },
+                labels: {
+                    show:true,
+                }
+            },
+            show:false,
+            yaxis: {
+                labels: {
+                    show:true,
+                },
+            },
+            tooltip: {
+                x: {
+                    format: 'MM'
+                },
+            },
+        };
         var optionsProfileVisit = {
             annotations: {
                 position: 'back'
@@ -192,14 +236,16 @@
                 opacity:1
             },
             plotOptions: {
+                borderRadius: 4,
+                horizontal: true,
             },
             series: [{
-                name: 'Sales',
-                data: [<?= $barValues[0]; ?>,<?= $barValues[1]; ?>,<?= $barValues[2]; ?>,<?= $barValues[3]; ?>,<?= $barValues[4]; ?>,<?= $barValues[5]; ?>,<?= $barValues[6]; ?>,<?= $barValues[7]; ?>,<?= $barValues[8]; ?>,<?= $barValues[9]; ?>,<?= $barValues[10]; ?>,<?= $barValues[11]; ?>]
+                name: 'Order',
+                data: []
             }],
             colors: '#435ebe',
             xaxis: {
-                categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul", "Aug","Sep","Oct","Nov","Dec"],
+                categories: ['A','B','C'],
             },
         }
         let optionsVisitorsProfile  = {
@@ -222,6 +268,7 @@
                 }
             }
         }
+        
     </script>
     <script src="assets/js/pages/dashboard.js"></script>
 

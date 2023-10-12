@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Mance Bicycle Shop</title>
+    <title>Inventory - Mance Bicycle Shop</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -28,14 +28,14 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-6 order-md-1 order-last">
-                                <h3>Products</h3>
-                                <a href="#" class="btn btn-outline-primary mb-2" data-bs-toggle="modal" data-bs-target="#productsModal">Add more</a>
+                                <h3>Inventory</h3>
+                                <a href="#" class="btn btn-outline-primary mb-2" data-bs-toggle="modal" data-bs-target="#productsModal">Add new Product</a>
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Products
+                                        <li class="breadcrumb-item active" aria-current="page">Inventory
                                         </li>
                                     </ol>
                                 </nav>
@@ -45,31 +45,36 @@
                     <section class="section">
                         <div class="card">
                             <div class="card-header">
-                                Products
+                                Inventory
 
                                 <?php if (isset($_GET['product-added-success'])) { ?>
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Product created successfully.
+                                        Inventory created successfully.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php } elseif (isset($_GET['update-success'])) { ?>
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Product updated successfully.
+                                        Inventory updated successfully.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php } elseif (isset($_GET['trash-success'])) { ?>
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Product move to trash successfully.
+                                        Inventory move to trash successfully.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php } elseif (isset($_GET['update-failed'])) { ?>
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        Product failed to update.
+                                        Inventory failed to update.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php } elseif (isset($_GET['product-exists'])) { ?>
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        Product already exists.
+                                        Inventory already exists.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php } elseif (isset($_GET['return-success'])) { ?>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Item returned Successfully.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php } ?>
@@ -85,6 +90,8 @@
                                             <th>Product Name</th>
                                             <th>Category</th>
                                             <th>UoM</th>
+                                            <th>Description</th>
+                                            <th>Stocks</th>
                                             <th></th>
                                         </tr>
                                     </thead>

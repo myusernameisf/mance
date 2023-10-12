@@ -1,7 +1,7 @@
 <?php
 
     include_once ('connection-open.php');
-    $stmt = $connection->prepare("SELECT inv_qty,inv_unitprice,inv_lowstocknotif FROM tblinventory WHERE inv_isTrash = ?");
+    $stmt = $connection->prepare("SELECT prd_qty,prd_unitprice,prd_lowstock FROM tblproducts WHERE prd_isTrash = ?");
     $stmt->execute([0]);
     $count = $stmt->rowCount();
     $datas = $stmt->fetchAll();
@@ -10,14 +10,14 @@
     $totalProducts = 0;
 
     foreach ($datas as $data) {
-        $total = $data['inv_qty'] * $data['inv_unitprice'];
+        $total = $data['prd_qty'] * $data['prd_unitprice'];
         $totalInventory += $total;
 
-        if ($data['inv_qty'] != 0) {
+        if ($data['prd_qty'] != 0) {
             $totalProducts++;
         }
 
-        if ($data['inv_qty'] <= $data['inv_lowstocknotif']) {
+        if ($data['prd_qty'] <= $data['prd_lowstock']) {
             $totalLowStocks++;
         }
         
@@ -27,7 +27,7 @@
 <div class="col-6 col-lg-3 col-md-6">
     <div class="card">
         <div class="card-body px-3 py-4-5">
-            <a href="inventory-table.php" data-bs-toggle="tooltip"
+            <a href="products-table.php" data-bs-toggle="tooltip"
             data-bs-placement="bottom" title="Go to Inventory">
                 <div class="row">
                     <div class="col-md-4">
@@ -46,7 +46,7 @@
 </div>
 <div class="col-6 col-lg-3 col-md-6">
     <div class="card">
-        <a href="inventory-table.php" data-bs-toggle="tooltip"
+        <a href="products-table.php" data-bs-toggle="tooltip"
             data-bs-placement="bottom" title="Go to Products">
             <div class="card-body px-3 py-4-5">
                 <div class="row">

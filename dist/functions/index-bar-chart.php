@@ -3,7 +3,8 @@
 
     $i = 1;
     $year = date('Y');
-    $barValues = array();
+    $grossValues = array();
+    $netValues = array();
     while ($i <= 12) {
         $date = date('Y-m', strtotime($year.'-'.$i));
         $stmt = $connection->prepare("SELECT * 
@@ -13,13 +14,18 @@
         $stmt->execute([0]);
         $datas = $stmt->fetchAll();
         $totalMonth = 0;
+        $totalNetMonth = 0;
 
         foreach ($datas as $data) {
             $total = $data['item_qty'] * $data['item_sellingPrice'];
+            $totalnet = $data['item_qty'] * $data['item_unitprice'];
             $totalMonth += $total;
-        }
-        array_push($barValues,$totalMonth);
 
+            $newNet = $total - $totalnet;
+            $totalNetMonth += $newNet;
+        }
+        array_push($grossValues,$totalMonth);
+        array_push($netValues,$totalNetMonth);
         $i++;
     }
 

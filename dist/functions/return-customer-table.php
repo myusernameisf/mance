@@ -19,12 +19,14 @@
                 <td><?= $data['item_prdName']; ?></td>
                 <td><b><?= $data['item_returnQty']; ?></b></td>
                 <td><?= $data['rc_remarks']; ?></td>
-                <td>
-                    <div class="text-center mb-3" role="group" aria-label="Basic example">
-                        <a class="btn btn-danger mr-2 mt-3" data-bs-toggle="modal" data-bs-target="#deleteReturnModal<?= $data['rc_ID']; ?>" data-bs-toggle="tooltip"
-                            data-bs-placement="left" title="Delete Record"><i class="bi bi-trash-fill"></i></a>
-                    </div>
-                </td>
+                <?php if ($userdetails['access'] == "ADMIN") { ?>
+                    <td>
+                        <div class="text-center mb-3" role="group" aria-label="Basic example">
+                            <a class="btn btn-danger mr-2 mt-3" data-bs-toggle="modal" data-bs-target="#deleteReturnModal<?= $data['rc_ID']; ?>" data-bs-toggle="tooltip"
+                                data-bs-placement="left" title="Delete Record"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </td>
+                <?php } ?>
             </tr>
 
             <?php include ('./return-customer-modal-trash.php'); ?>
