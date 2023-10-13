@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2023 at 03:10 AM
+-- Generation Time: Oct 13, 2023 at 11:23 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,7 +45,12 @@ CREATE TABLE `tblaccounts` (
 
 INSERT INTO `tblaccounts` (`acc_ID`, `acc_firstname`, `acc_lastname`, `acc_email`, `acc_password`, `acc_access`, `acc_isTrash`, `acc_datecreated`, `acc_logo`) VALUES
 (5, 'MANCE', 'BICYCLE', 'mancebikeshop@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'ADMIN', 0, '2023-09-12', 1),
-(13, 'EPH', 'ARCEO', 'rerem456@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 0, '2023-10-11', 1);
+(13, 'EPH', 'ARCEO', 'rerem456@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 1, '2023-10-11', 1),
+(14, 'ROXANNE`', 'VILLAREZ', 'roxanne@email.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 0, '2023-10-13', 5),
+(15, 'JOYCE', 'ANGULO', 'joyceangulo@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 0, '2023-10-13', 5),
+(16, 'DENNIS', 'BERGADO', 'dennisbergado@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 0, '2023-10-13', 5),
+(17, 'JOSHUA', 'BORROMEO', 'joshuaborromeo@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 0, '2023-10-13', 1),
+(18, 'MARK', 'MOLINA', 'markmolina@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'STAFF', 0, '2023-10-13', 1);
 
 -- --------------------------------------------------------
 
@@ -70,11 +75,14 @@ CREATE TABLE `tblexpenses` (
 --
 
 INSERT INTO `tblexpenses` (`exp_ID`, `exp_productCode`, `exp_productName`, `exp_receiptno`, `exp_supplier`, `exp_qty`, `exp_unitprice`, `exp_isTrash`, `exp_date`) VALUES
-(54, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', '5543658', 'PATRICK LINGAHAN', 30, 5000, 0, '2023-10-12'),
-(55, '2023-001-0012', 'MSI GTX 1050TI', '35435', 'CHRIS', 10, 3000, 0, '2023-10-12'),
-(56, '213124-4534i690768-545sfa', 'ACER LP2Y4K 24\" 75HZ', '1242', 'EPH ARCEO', 20, 7500, 0, '2023-10-12'),
-(57, '012-0221-221', 'LOGITECH G304', '5555', 'PATRICK', 55, 2100, 0, '2023-10-12'),
-(58, '2202304', 'REALME C35', '1111', 'REALME', 50, 8500, 0, '2023-10-12');
+(60, '111-001', 'SHIMANO SORA STI 9SPEED', '1', 'BIKE BIKE BIKE', 20, 4500, 0, '2023-10-13'),
+(61, '111-002', 'MOUNTAINPEAK VULCAN FRAME', '2', 'BIKE BIKE BIKE', 20, 5500, 0, '2023-10-13'),
+(62, '111-003', 'SAGMIT HANDLEBAR', '3', 'BIKE BIKE BIKE', 50, 700, 0, '2023-10-13'),
+(63, '111-004', 'MAXXIS TIRES', '4', 'BIKE BIKE', 48, 600, 0, '2023-10-13'),
+(64, '111-005', 'SAGMIT CRANKSET', '5', 'BIKE BIKE', 20, 1800, 0, '2023-10-13'),
+(65, '111-006', 'SHIMANO BUTTOM BRACKETS', '6', 'BIKE', 15, 1800, 0, '2023-10-13'),
+(66, '111-007', 'SHIMANO CASSETTE', '7', 'BIKE', 20, 1000, 0, '2023-10-13'),
+(67, '111-007', 'SHIMANO CASSETTE', '01', 'BIKE', 5, 1000, 0, '2023-10-13');
 
 -- --------------------------------------------------------
 
@@ -117,11 +125,13 @@ CREATE TABLE `tblproducts` (
 --
 
 INSERT INTO `tblproducts` (`prd_ID`, `prd_code`, `prd_name`, `prd_uom`, `prd_category`, `prd_unitprice`, `prd_sellingprice`, `prd_lowstock`, `prd_qty`, `prd_desc`, `prd_isTrash`, `prd_date`) VALUES
-(21, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', 'PCS', 'KEYBOARD', 5000, 4000, 20, 27, 'sample description', 0, '2023-10-12'),
-(22, '2023-001-0012', 'MSI GTX 1050TI', 'PCS', 'video card', 3000, 3500, 10, 0, 'this is a video card', 0, '2023-10-12'),
-(23, '213124-4534i690768-545sfa', 'ACER LP2Y4K 24\" 75HZ', 'PCS', 'monitor', 7500, 9500, 10, 11, 'monitor', 0, '2023-10-12'),
-(24, '012-0221-221', 'LOGITECH G304', 'PCS', 'mouse', 2100, 3000, 10, 0, 'mouse', 0, '2023-10-12'),
-(25, '2202304', 'REALME C35', 'PCS', 'cellphone', 8500, 9500, 10, 0, 'cp', 1, '2023-10-12');
+(26, '111-001', 'SHIMANO SORA STI 9SPEED', 'BOX', 'Bike Parts', 4500, 5000, 10, 18, '', 0, '2023-10-13'),
+(27, '111-002', 'MOUNTAINPEAK VULCAN FRAME', 'PCS', 'BIKE PARTS', 5500, 6000, 10, 20, 'CANDY RED', 0, '2023-10-13'),
+(28, '111-003', 'SAGMIT HANDLEBAR', 'PCS', 'BIKE PARTS', 700, 800, 10, 47, '', 0, '2023-10-13'),
+(29, '111-004', 'MAXXIS TIRES', 'PCS', 'BIKE PARTS', 600, 700, 10, 43, 'TAN WALL', 0, '2023-10-13'),
+(30, '111-005', 'SAGMIT CRANKSET', 'PCS', 'BIKE PARTS', 1800, 2000, 10, 16, 'RED/BLACK', 0, '2023-10-13'),
+(31, '111-006', 'SHIMANO BUTTOM BRACKETS', 'PCS', 'BIKE PARTS', 1800, 2000, 10, 11, '', 0, '2023-10-13'),
+(32, '111-007', 'SHIMANO CASSETTE', 'PCS', 'BIKE PARTS', 1000, 1200, 10, 21, '', 0, '2023-10-13');
 
 -- --------------------------------------------------------
 
@@ -142,9 +152,12 @@ CREATE TABLE `tblreturncustomer` (
 --
 
 INSERT INTO `tblreturncustomer` (`rc_ID`, `rc_itemID`, `rc_remarks`, `rc_isTrash`, `rc_date`) VALUES
-(2, 28, 'faulty', 1, '2023-10-11'),
-(3, 27, 'faultyyyy', 1, '2023-10-11'),
-(4, 46, 'sira daw', 0, '2023-10-13');
+(6, 60, 'SCRATCH', 0, '2023-10-13'),
+(7, 59, 'DEFECTIVE', 0, '2023-10-13'),
+(8, 54, ' the tire has been broken', 0, '2023-10-13'),
+(9, 50, 'the teeth of the cassette have defect', 0, '2023-10-13'),
+(10, 51, 'defective and scratch', 0, '2023-10-13'),
+(11, 58, 'dents of crank arm', 0, '2023-10-13');
 
 -- --------------------------------------------------------
 
@@ -155,6 +168,7 @@ INSERT INTO `tblreturncustomer` (`rc_ID`, `rc_itemID`, `rc_remarks`, `rc_isTrash
 CREATE TABLE `tblreturnsupplier` (
   `rs_ID` int(11) NOT NULL,
   `rs_date` date NOT NULL DEFAULT current_timestamp(),
+  `rs_supplier` varchar(100) NOT NULL,
   `rs_qty` int(11) NOT NULL,
   `rs_isTrash` int(11) NOT NULL,
   `rs_invID` int(11) NOT NULL,
@@ -165,12 +179,12 @@ CREATE TABLE `tblreturnsupplier` (
 -- Dumping data for table `tblreturnsupplier`
 --
 
-INSERT INTO `tblreturnsupplier` (`rs_ID`, `rs_date`, `rs_qty`, `rs_isTrash`, `rs_invID`, `rs_remarks`) VALUES
-(3, '2023-10-11', 5, 1, 19, 'faulty others cant click'),
-(4, '2023-10-12', 5, 0, 21, 'sira 5'),
-(5, '2023-10-12', 45, 0, 25, ''),
-(6, '2023-10-12', 50, 0, 24, ''),
-(7, '2023-10-13', 2, 0, 23, 'sira defective');
+INSERT INTO `tblreturnsupplier` (`rs_ID`, `rs_date`, `rs_supplier`, `rs_qty`, `rs_isTrash`, `rs_invID`, `rs_remarks`) VALUES
+(10, '2023-10-13', 'BIKE', 2, 0, 32, 'SCRATCH'),
+(11, '2023-10-13', 'BIKE BIKE BIKE', 1, 0, 30, 'SCRATCH'),
+(12, '2023-10-13', 'BIKE BIKE BIKE', 1, 0, 28, 'DENTS'),
+(13, '2023-10-13', 'BIKE BIKE BIKE ', 1, 0, 26, 'DEFECTIVE'),
+(14, '2023-10-13', 'BIKE BIKE BIKE', 1, 0, 30, 'SCRATCH');
 
 -- --------------------------------------------------------
 
@@ -194,12 +208,14 @@ CREATE TABLE `tblsales` (
 --
 
 INSERT INTO `tblsales` (`sale_ID`, `sale_receiptno`, `sale_userID`, `sale_date`, `sale_customer`, `sale_pm`, `sale_paid`, `sale_isTrash`) VALUES
-(23, 1, 5, '2023-10-12', '', 'CASH', 26000, 0),
-(24, 2, 5, '2023-10-12', '', 'CASH', 90000, 0),
-(25, 3, 5, '2023-10-12', '', 'BANK TRANSFER', 58000, 0),
-(26, 4, 5, '2023-10-12', '', 'CASH', 5000, 0),
-(27, 5, 5, '2023-10-13', '', 'CASH', 14000, 1),
-(28, 6, 5, '2023-10-13', '', 'CASH', 14000, 0);
+(30, 1, 5, '2023-10-13', 'ROXANE', 'CASH', 6000, 0),
+(31, 2, 5, '2023-10-13', 'RUSSEL', 'CASH', 2000, 0),
+(32, 3, 5, '2023-10-13', 'EPH', 'CASH', 1000, 0),
+(33, 4, 5, '2023-10-13', 'JOYCE', 'CASH', 6000, 0),
+(34, 5, 5, '2023-10-13', 'DENNIS', 'CASH', 5500, 0),
+(35, 6, 5, '2023-10-13', 'RUSSEL', 'CASH', 1500, 0),
+(36, 7, 5, '2023-10-13', 'MARK', 'CASH', 800, 0),
+(37, 8, 5, '2023-10-13', '', 'CASH', 5000, 1);
 
 -- --------------------------------------------------------
 
@@ -225,21 +241,19 @@ CREATE TABLE `tblsalesitem` (
 --
 
 INSERT INTO `tblsalesitem` (`item_ID`, `item_prdCode`, `item_prdName`, `item_receiptno`, `item_qty`, `item_returnQty`, `item_unitprice`, `item_sellingPrice`, `item_isTrash`, `item_date`) VALUES
-(31, '2023-001-0012', 'MSI GTX 1050TI', 1, 4, 0, 3000, 3500, 0, '2023-10-12'),
-(32, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', 1, 3, 0, 5000, 6000, 0, '2023-10-12'),
-(35, '213124-4534i690768-545sfa', 'ACER LP2Y4K 24\" 75HZ', 2, 2, 0, 7500, 9500, 0, '2023-10-12'),
-(36, '2023-001-0012', 'MSI GTX 1050TI', 2, 3, 0, 3000, 3500, 0, '2023-10-12'),
-(37, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', 2, 5, 0, 5000, 4000, 0, '2023-10-12'),
-(38, '2202304', 'REALME C35', 3, 2, 0, 8500, 9500, 0, '2023-10-12'),
-(39, '012-0221-221', 'LOGITECH G304', 3, 1, 0, 2100, 3000, 0, '2023-10-12'),
-(40, '213124-4534i690768-545sfa', 'ACER LP2Y4K 24\" 75HZ', 3, 3, 0, 7500, 9500, 0, '2023-10-12'),
-(41, '2023-001-0012', 'MSI GTX 1050TI', 3, 1, 0, 3000, 3500, 0, '2023-10-12'),
-(42, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', 3, 1, 0, 5000, 4000, 0, '2023-10-12'),
-(43, '2023-001-0012', 'MSI GTX 1050TI', 4, 1, 0, 3000, 5000, 0, '2023-10-12'),
-(44, '213124-4534i690768-545sfa', 'ACER LP2Y4K 24\" 75HZ', 5, 1, 0, 7500, 9500, 1, '2023-10-13'),
-(45, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', 5, 1, 0, 5000, 4000, 1, '2023-10-13'),
-(46, '2023-001-001', 'TECWARE PHANTOM ELITE 84 KEYS', 6, 1, 1, 5000, 4000, 0, '2023-10-13'),
-(47, '213124-4534i690768-545sfa', 'ACER LP2Y4K 24\" 75HZ', 6, 1, 0, 7500, 9500, 0, '2023-10-13');
+(50, '111-007', 'SHIMANO CASSETTE', 1, 1, 1, 1000, 1200, 0, '2023-10-13'),
+(51, '111-006', 'SHIMANO BUTTOM BRACKETS', 1, 2, 1, 1800, 2000, 0, '2023-10-13'),
+(52, '111-006', 'SHIMANO BUTTOM BRACKETS', 2, 1, 0, 1800, 2000, 0, '2023-10-13'),
+(53, '111-003', 'SAGMIT HANDLEBAR', 3, 1, 0, 700, 800, 0, '2023-10-13'),
+(54, '111-004', 'MAXXIS TIRES', 4, 1, 1, 600, 700, 0, '2023-10-13'),
+(55, '111-001', 'SHIMANO SORA STI 9SPEED', 4, 1, 0, 4500, 5000, 0, '2023-10-13'),
+(56, '111-007', 'SHIMANO CASSETTE', 5, 1, 0, 1000, 1200, 0, '2023-10-13'),
+(57, '111-006', 'SHIMANO BUTTOM BRACKETS', 5, 1, 0, 1800, 2000, 0, '2023-10-13'),
+(58, '111-005', 'SAGMIT CRANKSET', 5, 1, 1, 1800, 2000, 0, '2023-10-13'),
+(59, '111-004', 'MAXXIS TIRES', 6, 2, 2, 600, 700, 0, '2023-10-13'),
+(60, '111-003', 'SAGMIT HANDLEBAR', 7, 1, 1, 700, 800, 0, '2023-10-13'),
+(61, '111-005', 'SAGMIT CRANKSET', 8, 1, 0, 1800, 3000, 1, '2023-10-13'),
+(62, '111-004', 'MAXXIS TIRES', 8, 2, 0, 600, 900, 1, '2023-10-13');
 
 --
 -- Indexes for dumped tables
@@ -301,49 +315,49 @@ ALTER TABLE `tblsalesitem`
 -- AUTO_INCREMENT for table `tblaccounts`
 --
 ALTER TABLE `tblaccounts`
-  MODIFY `acc_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `acc_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tblexpenses`
 --
 ALTER TABLE `tblexpenses`
-  MODIFY `exp_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `exp_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `tblpos`
 --
 ALTER TABLE `tblpos`
-  MODIFY `pos_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `pos_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
 --
 ALTER TABLE `tblproducts`
-  MODIFY `prd_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `prd_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tblreturncustomer`
 --
 ALTER TABLE `tblreturncustomer`
-  MODIFY `rc_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `rc_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tblreturnsupplier`
 --
 ALTER TABLE `tblreturnsupplier`
-  MODIFY `rs_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `rs_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tblsales`
 --
 ALTER TABLE `tblsales`
-  MODIFY `sale_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `sale_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tblsalesitem`
 --
 ALTER TABLE `tblsalesitem`
-  MODIFY `item_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `item_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
