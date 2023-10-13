@@ -17,6 +17,7 @@
                 <td><?= $data['prd_code']; ?></td>
                 <td><?= $data['prd_name']; ?></td>
                 <td><b><?= $data['rs_qty']; ?></b></td>
+                <td><?= $data['rs_supplier']; ?></td>
                 <td><?= $data['rs_remarks']; ?></td>
 
                 <?php if ($userdetails['access'] == 'ADMIN') { ?>

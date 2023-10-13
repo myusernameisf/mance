@@ -20,6 +20,9 @@
                     Select Qty: 
                     <input type="number" name="qty" placeholder="Qty" max="<?= $data['prd_qty']; ?>" min="1" value="<?= $data['prd_qty']; ?>"
                     class="form-control" required>
+                    Select Supplier: 
+                    <input type="text" name="supplier" placeholder="Supplier" value=""
+                    class="form-control" required>
                     Remarks: 
                     <textarea class="form-control" name="remarks" id="exampleFormControlremarks"
                         rows="3" required></textarea>

@@ -62,6 +62,7 @@
                                             <th>Product Code</th>
                                             <th>Product Name</th>
                                             <th>Qty</th>
+                                            <th>Supplier</th>
                                             <th>Remarks</th>
                                             <?php if($userdetails['access'] == "ADMIN") { ?>
                                                 <th></th>

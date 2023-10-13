@@ -99,7 +99,7 @@
                             <thead>
                                 <tr>
                                     <th>Product Code</th>
-                                    <th>Name</th>
+                                    <th>Product Name</th>
                                     <th>Qty</th>
                                     <th>Selling Price</th>
                                     <th>Total</th>
